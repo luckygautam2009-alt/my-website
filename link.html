@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <style>
+        nav {
+            background: #f2f2f2;
+            padding: 10px;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            padding: 10px 15px;
+            color: black;
+            margin-right: 10px;
+            border-radius: 5px;
+        }
+
+        .nav-link.active {
+            background-color: blue;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <a href="index.html" class="nav-link">Home</a>
+    <a href="YASH.html" class="nav-link">YASH</a>
+    <a href="about.html" class="nav-link">About</a>
+</nav>
+
+<h1>Home Page</h1>
+
+<script>
+    const currentPage = window.location.pathname.split("/").pop() || "index.html";
+
+    document.querySelectorAll(".nav-link").forEach(link => {
+        if (link.getAttribute("href") === currentPage) {
+            link.classList.add("active");
+        }
+    });
+</script>
+
+</body>
+</html>

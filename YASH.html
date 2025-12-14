@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Area Calculator</title>
+</head>
+<body>
+
+    <h1>Area of Rectangle</h1>
+    <form onsubmit="return rectangleArea()">
+        Enter length: <input type="text" id="num1"><br><br>
+        Enter breadth: <input type="text" id="num2"><br><br>
+        <button type="submit">Submit</button>
+    </form>
+<hr>
+    <h1>Area of Square</h1>
+    <form onsubmit="return squareArea()">
+        Enter side: <input type="text" id="side"><br><br>
+        <button type="submit">Submit</button>
+    </form>
+<hr>
+    <h1>Area of Triangle</h1>
+    <form onsubmit="return triangleArea()">
+        Enter base: <input type="text" id="base"><br><br>
+        Enter height: <input type="text" id="height"><br><br>
+        <button type="submit">Submit</button>
+    </form>
+<hr>
+    <h1>Perimeter of Rectangle</h1>
+    <form onsubmit="return rectanglePerimeter()">
+        Enter length: <input type="text" id="length"><br><br>
+        Enter breadth: <input type="text" id="breadth"><br><br>
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+        function rectangleArea() {
+            let l = document.getElementById("num1").value;
+            let b = document.getElementById("num2").value;
+
+            if (l === "" || b === "" || isNaN(l) || isNaN(b)) {
+                alert("Please enter valid numeric values");
+                return false;
+            }
+
+              document.write("Area of Rectangle = " + (l * b));
+            return false;
+        }
+
+        function squareArea() {
+            let s = document.getElementById("side").value;
+
+            if (s === "" || isNaN(s)) {
+                alert("Please enter a valid number");
+                return false;
+            }
+
+              document.write("Area of Square = " + (s * s));
+            return false;
+        }
+
+        function triangleArea() {
+            let b = document.getElementById("base").value;
+            let h = document.getElementById("height").value;
+
+            if (b === "" || h === "" || isNaN(b) || isNaN(h)) {
+                alert("Please enter valid numeric values");
+                return false;
+            }
+
+            document.write("Area of Triangle = " + (0.5 * b * h));
+            return false;
+        }
+
+        function rectanglePerimeter() {
+            let l = document.getElementById("length").value;
+            let b = document.getElementById("breadth").value;
+
+            if (l === "" || b === "" || isNaN(l) || isNaN(b)) {
+                alert("Please enter valid numeric values");
+                return false;
+            }
+
+              document.write("Perimeter of Rectangle = " + (2 * (Number(l) + Number(b))));
+            return false;
+        }
+    </script>
+
+</body>
+</html>
